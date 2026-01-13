@@ -95,11 +95,8 @@
 
   <div class="container">
     <header>
-      <h1>Servicios Profesionales de TI</h1>
-      <p>
-        Desarrollo de software, redes, videovigilancia (CCTV) y soporte técnico estructurado para asegurar la
-        continuidad operativa y el crecimiento de tu negocio.
-      </p>
+      <h1>JA IT Solutions</h1>
+        <p>Servicios Profesionales de TI</p>
       <div class="buttons">
         <a href="#tickets" class="primary">Crear Ticket de Soporte</a>
         <a href="#contacto" class="secondary">Solicitar Información</a>
@@ -115,7 +112,7 @@
             <li>Aplicaciones a la medida</li>
             <li>Automatización de procesos</li>
             <li>Sistemas internos</li>
-            <li>Integración de sistemas</li>
+            <li>Integración de sistemas y APIs</li>
           </ul>
         </div>
         <div class="card">
@@ -139,17 +136,36 @@
     </section>
 
     <section id="tickets">
-      <h2>Sistema de Tickets</h2>
+      <h2>Crear Ticket de Soporte</h2>
       <div class="highlight">
-        <p><strong>Soporte técnico estructurado y trazable.</strong></p>
-        <ul>
-          <li>Creación de tickets por incidente o solicitud</li>
-          <li>Seguimiento por estado</li>
-          <li>Priorización según criticidad</li>
-          <li>Historial documentado</li>
-        </ul>
-        <p>
-          Cada solicitud es registrada, atendida y cerrada formalmente. Sin mensajes perdidos ni improvisación.
+        <p><strong>Registra tu solicitud de soporte.</strong></p>
+        <form action="https://formspree.io/f/xxxxxxxx" method="POST">
+          <label>
+            Nombre:
+            <input type="text" name="nombre" required style="width:100%; padding:8px; margin:6px 0;" />
+          </label>
+          <label>
+            Correo electrónico:
+            <input type="email" name="email" required style="width:100%; padding:8px; margin:6px 0;" />
+          </label>
+          <label>
+            Tipo de servicio:
+            <select name="servicio" required style="width:100%; padding:8px; margin:6px 0;">
+              <option value="">Seleccionar</option>
+              <option>Desarrollo de Software</option>
+              <option>Redes e Infraestructura</option>
+              <option>CCTV</option>
+              <option>Soporte General</option>
+            </select>
+          </label>
+          <label>
+            Descripción del problema o solicitud:
+            <textarea name="mensaje" rows="4" required style="width:100%; padding:8px; margin:6px 0;"></textarea>
+          </label>
+          <button type="submit" style="margin-top:15px; padding:12px 20px; background:#2563eb; color:#fff; border:none; border-radius:6px; font-weight:bold;">Enviar Ticket</button>
+        </form>
+        <p style="margin-top:15px; font-size:0.9rem;">
+          Recibirás confirmación por correo una vez registrado el ticket.
         </p>
       </div>
     </section>
@@ -188,5 +204,3 @@
 
 </body>
 </html>
-
-
