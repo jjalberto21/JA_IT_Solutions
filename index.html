@@ -1,227 +1,803 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JA IT Solutions | Desarrollo, Redes y CCTV</title>
-  <meta name="description" content="Servicios profesionales de TI: desarrollo de software, redes, CCTV y soporte técnico con sistema de tickets para seguimiento y control." />
-  <meta name="robots" content="index, follow" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-      line-height: 1.6;
+<title>JA IT Solutions | Ingeniería de Software y Soluciones Tecnológicas</title>
+
+<meta name="description"
+content="Desarrollo de software empresarial, automatización de procesos, infraestructura tecnológica y soluciones operativas para PyMEs, constructoras, talleres y comercios." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background:#0F172A;
+    color:#F8FAFC;
+    line-height:1.6;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(15,23,42,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.05);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:'Poppins', sans-serif;
+    font-size:1.3rem;
+    font-weight:700;
+    color:#fff;
+}
+
+.logo span{
+    color:#06B6D4;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#CBD5E1;
+    transition:.3s;
+    font-size:.95rem;
+}
+
+nav ul li a:hover{
+    color:#06B6D4;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 20px 80px;
+    background:
+    radial-gradient(circle at top right, rgba(37,99,235,.25), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(6,182,212,.20), transparent 35%);
+}
+
+.hero-content{
+    max-width:1100px;
+    width:100%;
+    text-align:center;
+}
+
+.hero h1{
+    font-family:'Poppins', sans-serif;
+    font-size:4rem;
+    line-height:1.15;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#06B6D4;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    font-size:1.2rem;
+    color:#CBD5E1;
+}
+
+.stats{
+    margin-top:50px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+}
+
+.stat-card{
+    background:#1E293B;
+    padding:25px 30px;
+    border-radius:16px;
+    min-width:220px;
+    border:1px solid rgba(255,255,255,.05);
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+    border-color:#06B6D4;
+}
+
+.stat-card h3{
+    font-size:2rem;
+    color:#06B6D4;
+}
+
+.buttons{
+    margin-top:45px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.btn{
+    padding:15px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#2563EB;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#1D4ED8;
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    border:1px solid #06B6D4;
+    color:#06B6D4;
+}
+
+.btn-secondary:hover{
+    background:#06B6D4;
+    color:#fff;
+}
+
+/* ========================= */
+/* GENERAL SECTION */
+/* ========================= */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 20px;
+}
+
+.section-title{
+    font-family:'Poppins', sans-serif;
+    font-size:2.6rem;
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+    color:#94A3B8;
+    max-width:800px;
+    margin-bottom:50px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1E293B;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#06B6D4;
+}
+
+.card h3{
+    margin-bottom:18px;
+    font-size:1.4rem;
+}
+
+.card ul{
+    padding-left:18px;
+    color:#CBD5E1;
+}
+
+.card li{
+    margin-bottom:10px;
+}
+
+/* ========================= */
+/* PROJECTS */
+/* ========================= */
+
+.project-card{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.tech-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.tech-tags span{
+    background:#0F172A;
+    border:1px solid rgba(255,255,255,.08);
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:.85rem;
+    color:#06B6D4;
+}
+
+/* ========================= */
+/* CLIENTS */
+/* ========================= */
+
+.logos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:30px;
+    align-items:center;
+}
+
+.logos img{
+    width:100%;
+    max-width:180px;
+    margin:auto;
+    filter:grayscale(100%);
+    opacity:.8;
+    transition:.3s;
+}
+
+.logos img:hover{
+    filter:none;
+    opacity:1;
+}
+
+.disclaimer{
+    margin-top:25px;
+    color:#94A3B8;
+    font-size:.9rem;
+}
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+form{
+    background:#1E293B;
+    padding:35px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+form label{
+    display:block;
+    margin-bottom:18px;
+}
+
+form input,
+form textarea,
+form select{
+    width:100%;
+    margin-top:8px;
+    padding:14px;
+    border-radius:10px;
+    border:none;
+    background:#0F172A;
+    color:#fff;
+    border:1px solid rgba(255,255,255,.06);
+}
+
+form button{
+    background:#2563EB;
+    color:#fff;
+    border:none;
+    padding:15px 25px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+form button:hover{
+    background:#1D4ED8;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+    background:#020617;
+    padding:50px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+footer h3{
+    margin-bottom:20px;
+}
+
+footer p{
+    color:#CBD5E1;
+    margin-bottom:10px;
+}
+
+footer a{
+    color:#06B6D4;
+    text-decoration:none;
+}
+
+.footer-links{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.6rem;
     }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
+
+    nav ul{
+        display:none;
     }
-    header {
-      text-align: center;
-      margin-bottom: 70px;
+
+    .section-title{
+        font-size:2rem;
     }
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 15px;
-    }
-    header p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1rem;
-    }
-    .buttons a {
-      display: inline-block;
-      margin: 20px 10px 0;
-      padding: 14px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-    .primary {
-      background-color: #2563eb;
-      color: white;
-    }
-    .secondary {
-      border: 2px solid #2563eb;
-      color: #2563eb;
-    }
-    section {
-      margin-bottom: 70px;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 10px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-    .card {
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-    .card h3 {
-      margin-top: 0;
-    }
-    .highlight {
-      background-color: #eff6ff;
-      border-left: 6px solid #2563eb;
-      padding: 25px;
-      border-radius: 6px;
-    }
-    footer {
-      background-color: #111827;
-      color: #d1d5db;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    footer a {
-      color: #93c5fd;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-  </style>
+
+}
+
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>JA IT Solutions</h1>
-        <p>Servicios Profesionales de TI</p>
-      <div class="buttons">
-        <a href="#tickets" class="primary">Crear Ticket de Soporte</a>
-        <a href="#contacto" class="secondary">Solicitar Información</a>
-      </div>
-    </header>
+<!-- NAVBAR -->
 
-    <section>
-      <h2>Servicios</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Desarrollo de Software</h3>
-          <ul>
-            <li>Aplicaciones a la medida</li>
-            <li>Automatización de procesos</li>
-            <li>Sistemas internos</li>
-            <li>Integración de sistemas y APIs</li>
-          </ul>
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            JA <span>IT Solutions</span>
         </div>
-        <div class="card">
-          <h3>Redes e Infraestructura</h3>
-          <ul>
-            <li>Instalación de redes LAN / WiFi</li>
-            <li>Configuración de servidores</li>
-            <li>Soporte y mantenimiento</li>
-          </ul>
+
+        <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#software">Software</a></li>
+            <li><a href="#stack">Tecnologías</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#tickets">Soporte</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Ingeniería de <span>Software</span><br>
+            y Soluciones Tecnológicas
+        </h1>
+
+        <p>
+            Desarrollo sistemas empresariales, automatización de procesos,
+            dashboards operativos, infraestructura tecnológica y soluciones
+            a medida para PyMEs, constructoras, talleres y comercios.
+        </p>
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>10+</h3>
+                <p>Años de experiencia</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>C#</h3>
+                <p>Especialidad principal</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>ERP</h3>
+                <p>Sistemas empresariales</p>
+            </div>
+
         </div>
-        <div class="card">
-          <h3>Sistemas de Videovigilancia (CCTV)</h3>
-          <ul>
-            <li>Cámaras IP</li>
-            <li>Configuración y monitoreo</li>
-            <li>Integración con red existente</li>
-            <li>Soporte y mantenimiento</li>
-          </ul>
+
+        <div class="buttons">
+            <a href="#software" class="btn btn-primary">
+                Ver Portafolio
+            </a>
+
+            <a href="#contacto" class="btn btn-secondary">
+                Solicitar Información
+            </a>
         </div>
-      </div>
-    </section>
 
-    <section>
-      <h2>Por Qué Elegirnos</h2>
-      <ul>
-        <li>Atención profesional y estructurada</li>
-        <li>Experiencia real en entornos productivos</li>
-        <li>Visión técnica y de negocio</li>
-        <li>Comunicación clara y seguimiento</li>
-      </ul>
-    </section>
+    </div>
 
-    <section id="clientes">
-  <h2>Organizaciones a las que he brindado servicios</h2>
-
-  <div class="logos">
-    <img src="img/Empresa1.png" alt="Empresa1">
-    <img src="img/Empresa2.png" alt="Empresa2">
-    <img src="img/Empresa3.png" alt="Empresa3">
-  </div>
-
-  <p class="disclaimer">
-    Los logotipos pertenecen a sus respectivas marcas.
-    Los servicios fueron prestados como proveedor externo.
-  </p>
 </section>
 
-    <section id="tickets">
-      <h2>Crear Ticket de Soporte</h2>
-      <div class="highlight">
-        <p><strong>Registra tu solicitud de soporte.</strong></p>
-        <form action="https://formspree.io/f/xpqqznel" method="POST">
-          <label>
-            Nombre:
-            <input type="text" name="nombre" required style="width:100%; padding:8px; margin:6px 0;" />
-          </label>
-          <label>
-            Correo electrónico:
-            <input type="email" name="email" required style="width:100%; padding:8px; margin:6px 0;" />
-          </label>
-          <label>
-            Tipo de servicio:
-            <select name="servicio" required style="width:100%; padding:8px; margin:6px 0;">
-              <option value="">Seleccionar</option>
-              <option>Desarrollo de Software</option>
-              <option>Redes e Infraestructura</option>
-              <option>CCTV</option>
-              <option>Soporte General</option>
+<!-- SERVICIOS -->
+
+<section class="container" id="servicios">
+
+    <h2 class="section-title">Servicios</h2>
+
+    <p class="section-subtitle">
+        Soluciones tecnológicas empresariales enfocadas en automatización,
+        control operativo y optimización de procesos.
+    </p>
+
+    <div class="grid">
+
+        <a href="#software" style="text-decoration:none;color:inherit;">
+
+            <div class="card">
+
+                <h3>Desarrollo de Software</h3>
+
+                <ul>
+                    <li>Aplicaciones empresariales</li>
+                    <li>Automatización de procesos</li>
+                    <li>Dashboards operativos</li>
+                    <li>Sistemas administrativos</li>
+                    <li>Integración con APIs</li>
+                    <li>Software a medida</li>
+                </ul>
+
+            </div>
+
+        </a>
+
+        <div class="card">
+
+            <h3>Redes e Infraestructura</h3>
+
+            <ul>
+                <li>Redes LAN y WiFi</li>
+                <li>Configuración de servidores</li>
+                <li>Soporte técnico</li>
+                <li>Infraestructura tecnológica</li>
+                <li>Optimización de conectividad</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h3>CCTV y Monitoreo</h3>
+
+            <ul>
+                <li>Cámaras IP</li>
+                <li>Monitoreo remoto</li>
+                <li>Integración de red</li>
+                <li>Configuración de grabadores</li>
+                <li>Soporte y mantenimiento</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SOFTWARE -->
+
+<section class="container" id="software">
+
+    <h2 class="section-title">
+        Desarrollo de Software Empresarial
+    </h2>
+
+    <p class="section-subtitle">
+        Desarrollo soluciones empresariales enfocadas en automatización operativa,
+        control administrativo y optimización de procesos.
+    </p>
+
+    <div class="grid">
+
+        <div class="card project-card">
+
+            <h3>Sistema de Gestión de Cobranza</h3>
+
+            <p>
+                Plataforma administrativa para control de clientes,
+                préstamos, pagos y seguimiento de cobranza.
+            </p>
+
+            <div class="tech-tags">
+                <span>C#</span>
+                <span>SQL Server</span>
+                <span>Windows Forms</span>
+            </div>
+
+        </div>
+
+        <div class="card project-card">
+
+            <h3>Sistema Administrativo para Taller Mecánico</h3>
+
+            <p>
+                Administración operativa completa desde recepción
+                hasta entrega de unidades con dashboards y paneles de estatus.
+            </p>
+
+            <div class="tech-tags">
+                <span>C#</span>
+                <span>Telerik</span>
+                <span>Dashboards</span>
+            </div>
+
+        </div>
+
+        <div class="card project-card">
+
+            <h3>Sistema de Control de Pedidos</h3>
+
+            <p>
+                Flujo operativo completo con validaciones y criterios
+                de aceptación por proceso.
+            </p>
+
+            <div class="tech-tags">
+                <span>.NET</span>
+                <span>SQL Server</span>
+                <span>Control Operativo</span>
+            </div>
+
+        </div>
+
+        <div class="card project-card">
+
+            <h3>Sistema de Cotizaciones y Gestión Comercial</h3>
+
+            <p>
+                Plataforma para cotizaciones, ventas,
+                proyectos, tareas y seguimiento comercial.
+            </p>
+
+            <div class="tech-tags">
+                <span>ERP</span>
+                <span>CRM</span>
+                <span>C#</span>
+            </div>
+
+        </div>
+
+        <div class="card project-card">
+
+            <h3>Sistema de Almacén</h3>
+
+            <p>
+                Control de inventarios, movimientos,
+                existencias y administración de productos.
+            </p>
+
+            <div class="tech-tags">
+                <span>Inventarios</span>
+                <span>MySQL</span>
+                <span>Administración</span>
+            </div>
+
+        </div>
+
+        <div class="card project-card">
+
+            <h3>FVAS — Polígrafo de Audio</h3>
+
+            <p>
+                Sistema especializado para procesamiento
+                y gestión de información de audio.
+            </p>
+
+            <div class="tech-tags">
+                <span>Audio</span>
+                <span>Software Especializado</span>
+                <span>C#</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STACK -->
+
+<section class="container" id="stack">
+
+    <h2 class="section-title">
+        Stack Tecnológico
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Backend</h3>
+
+            <ul>
+                <li>C#</li>
+                <li>.NET</li>
+                <li>ASP.NET MVC</li>
+                <li>APIs REST</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Bases de Datos</h3>
+
+            <ul>
+                <li>SQL Server</li>
+                <li>MySQL</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Herramientas</h3>
+
+            <ul>
+                <li>Telerik</li>
+                <li>Crystal Reports</li>
+                <li>Git</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CLIENTES -->
+
+<section class="container" id="clientes">
+
+    <h2 class="section-title">
+        Organizaciones a las que he brindado servicios
+    </h2>
+
+    <div class="logos">
+        <img src="img/Empresa1.png" alt="Empresa 1">
+        <img src="img/Empresa2.png" alt="Empresa 2">
+        <img src="img/Empresa3.png" alt="Empresa 3">
+    </div>
+
+    <p class="disclaimer">
+        Los logotipos pertenecen a sus respectivas marcas.
+        Los servicios fueron prestados como proveedor externo.
+    </p>
+
+</section>
+
+<!-- TICKETS -->
+
+<section class="container" id="tickets">
+
+    <h2 class="section-title">
+        Crear Ticket de Soporte
+    </h2>
+
+    <p class="section-subtitle">
+        Registra tu solicitud de soporte y da seguimiento profesional
+        a incidencias o requerimientos.
+    </p>
+
+    <form action="https://formspree.io/f/xpqqznel" method="POST">
+
+        <label>
+            Nombre
+            <input type="text" name="nombre" required>
+        </label>
+
+        <label>
+            Correo Electrónico
+            <input type="email" name="email" required>
+        </label>
+
+        <label>
+            Tipo de Servicio
+            <select name="servicio" required>
+                <option value="">Seleccionar</option>
+                <option>Desarrollo de Software</option>
+                <option>Infraestructura</option>
+                <option>CCTV</option>
+                <option>Soporte General</option>
             </select>
-          </label>
-          <label>
-            Descripción del problema o solicitud:
-            <textarea name="mensaje" rows="4" required style="width:100%; padding:8px; margin:6px 0;"></textarea>
-          </label>
-          <button type="submit" style="margin-top:15px; padding:12px 20px; background:#2563eb; color:#fff; border:none; border-radius:6px; font-weight:bold;">Enviar Ticket</button>
-        </form>
-        <p style="margin-top:15px; font-size:0.9rem;">
-          Recibirás confirmación por correo una vez registrado el ticket.
-        </p>
-      </div>
-    </section>
+        </label>
 
-    <section>
-      <h2>Cómo Funciona</h2>
-      <div class="grid">
-        <div class="card">1. Creación del ticket</div>
-        <div class="card">2. Evaluación y prioridad</div>
-        <div class="card">3. Atención y seguimiento</div>
-        <div class="card">4. Cierre documentado</div>
-      </div>
-    </section>
-  </div>  
+        <label>
+            Descripción
+            <textarea name="mensaje" rows="5" required></textarea>
+        </label>
 
-  <footer id="contacto">
-    <p>Contacto</p>
+        <button type="submit">
+            Enviar Ticket
+        </button>
+
+    </form>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contacto">
+
+    <h3>JA IT Solutions</h3>
+
     <p>
-      📧 <a href="mailto:jjalberto21@gmail.com">jjalberto21@gmail.com</a> |
-      📱 <a href="tel:+528117544028">+52 8117-5440-28</a>
+        Ingeniería de Software y Soluciones Tecnológicas
     </p>
+
     <p>
-      Servicios Profesionales de TI
+        📧
+        <a href="mailto:jjalberto21@gmail.com">
+            jjalberto21@gmail.com
+        </a>
     </p>
-  </footer>
+
+    <p>
+        📱
+        <a href="tel:+528117544028">
+            +52 8117-5440-28
+        </a>
+    </p>
+
+    <div class="footer-links">
+
+        <a href="https://github.com/jjalberto21/" target="_blank">
+            GitHub
+        </a>
+
+        <a href="https://jjalberto21.github.io/JA_IT_Solutions/" target="_blank">
+            Sitio Web
+        </a>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
-
-
-
-
-
-
